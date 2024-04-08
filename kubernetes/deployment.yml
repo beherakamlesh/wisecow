@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: wisecow-site
+
+  labels:
+
+    app: wisecow-webapp-deployment   # This label is for the Deployment itself
+
+spec:
+
+  replicas: 2
+
+  selector:
+
+    matchLabels:
+
+      app: wisecow-app    # This should match the labels in the template
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: wisecow-app   # Labels for the pods created by the Deployment
+
+    spec:
+
+      containers:
+
+        - name: wisecow-cont
+
+          image: 661239473781.dkr.ecr.us-east-1.amazonaws.com/wisecowrepo:latest
+
+          ports:
+
+            - containerPort: 4499
