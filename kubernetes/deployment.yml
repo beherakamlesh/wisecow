@@ -32,7 +32,7 @@ spec:
 
       containers:
 
-        - name: wisecow-cont
+        - name: wisecow-container
 
           image: 661239473781.dkr.ecr.us-east-1.amazonaws.com/wisecowrepo:latest
 
